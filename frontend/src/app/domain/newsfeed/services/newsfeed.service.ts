@@ -2,12 +2,14 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {newsfeed} from "../newsfeed";
 
+const API_URL = '/api/v1/newsfeed';
+
 @Injectable({
   providedIn: 'root'
 })
 export class NewsfeedService {
 
-  private url = "http://localhost:8080/api/v1/newsfeed";
+  private url = window["apiUrl"] + API_URL;
 
   constructor(private http: HttpClient) {
   }

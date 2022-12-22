@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment';
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from "./auth/services/token-storage.service";
 
@@ -11,7 +12,9 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   login?: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(private tokenStorageService: TokenStorageService) {
+    window["apiUrl"] = environment.production ? "" : "http://localhost:5555";
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();

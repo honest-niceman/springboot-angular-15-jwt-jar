@@ -56,7 +56,7 @@ public class WebSecurityConfig {
             .disable().exceptionHandling(handler -> handler.authenticationEntryPoint(unauthorizedHandler))
             .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeRequests(authRequests -> authRequests.antMatchers("/api/v1/auth/**").permitAll()
-                                                           .antMatchers("*/*.js", "/favicon.ico").permitAll()//позволяем получать js файлы
+                                                           .antMatchers("/*.js", "/*.map", "/*.css", "/*.ts", "/*.html","/favicon.ico").permitAll()
                                                            .antMatchers("/", "/home", "/login", "/logout").permitAll()
                                                            .anyRequest().authenticated())
             .authenticationProvider(authenticationProvider());

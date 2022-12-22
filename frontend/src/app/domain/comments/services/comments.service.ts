@@ -3,14 +3,15 @@ import {Observable} from 'rxjs';
 import {CommentInterface} from '../types/comment.interface';
 import {HttpClient} from '@angular/common/http';
 
+const API_URL = '/api/v1/comment';
+
 @Injectable()
 export class CommentsService {
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getComments(postId: string): Observable<CommentInterface[]> {
     return this.httpClient.get<CommentInterface[]>(
-      'http://localhost:8080/api/v1/comment/find-all',
+      window["apiUrl"] + API_URL +'/find-all',
       {params: {pageNumber: 0, pageSize: 5, postId: postId}}
     );
   }
@@ -21,7 +22,7 @@ export class CommentsService {
     postId: string
   ): Observable<CommentInterface> {
     return this.httpClient.post<CommentInterface>(
-      'http://localhost:8080/api/v1/comment/save',
+      window["apiUrl"] + API_URL +'/save',
       {
         body: text,
         parentId: parentId,
