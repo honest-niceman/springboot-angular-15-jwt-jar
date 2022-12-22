@@ -1,13 +1,12 @@
-package dev.marco.example.springboot;
+package com.example.twitterwebapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class Application {
+public class TwitterWebAppApplication{
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class);
+        SpringApplication.run(TwitterWebAppApplication.class, args);
     }
 }

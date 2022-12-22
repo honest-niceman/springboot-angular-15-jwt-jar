@@ -1,1 +1,19 @@
-Message from server: {{message}}
+<div id="app">
+  <mat-toolbar color="primary" class="navbar">
+    <div *ngIf="isLoggedIn">
+      <a mat-button routerLink="/users" routerLinkActive="active" *ngIf="role?.toUpperCase()==='ADMIN'">Users</a>
+      <a mat-button routerLink="/posts" routerLinkActive="active">Posts</a>
+      <a mat-button routerLink="/feed" routerLinkActive="active">Feed</a>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <a mat-button routerLink="/login" routerLinkActive="active">Log in</a>
+      <a mat-button routerLink="/register" routerLinkActive="active">Register</a>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <a mat-button href (click)="logout()" routerLinkActive="active">Log out</a>
+    </div>
+  </mat-toolbar>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</div>

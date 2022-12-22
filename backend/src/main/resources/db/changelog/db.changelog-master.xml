@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <include file="db/changelog/2022/10/22-01-init-changelog.xml"/>
+    <include file="db/changelog/2022/10/22-02-add-one-admin.xml"/>
+    <include file="/db/changelog/2022/12/10-01-add-email-column-to-user.xml"/>
+    <include file="db/changelog/2022/12/20-01-remove-draft-changelog.xml"/>
+    <include file="/db/changelog/2022/12/20-02-adjust-post-to-attachment-cardinality-changelog.xml"/>
+    <include file="db/changelog/2022/12/20-03-add-photo-for-user-changelog.xml"/>
+    <include file="/db/changelog/2022/12/20-04-adjust-comment-changelog.xml"/>
+</databaseChangeLog>
